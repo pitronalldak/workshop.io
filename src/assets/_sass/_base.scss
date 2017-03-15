@@ -31,6 +31,7 @@ body {
   font-feature-settings: 'liga' 0;
   font-size: 100%;
   line-height: 1.6;
+  margin: 0px;
 
   @media (min-width: $mq-xs) {
     font-size: 102.5%;

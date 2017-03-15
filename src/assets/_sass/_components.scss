@@ -48,16 +48,6 @@
   ul {
     list-style-type: none;
   }
-  &.technologies {
-    padding: 4em 3em 3em 3em;
-
-    .technology-panel {
-      padding: 0.5em;
-      display: inline-block;
-      width: 160px;
-      height: 90px;
-    }
-  }
 }
 
 /**
@@ -71,7 +61,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80%;
+    height: 60%;
     width: 100%;
     padding: 2em;
 
@@ -83,6 +73,14 @@
       font-family: $font-body;
     }
   }
+}
+
+.preview__img {
+  background-image: url('../../assets/img/bgleftmain.jpg');
+}
+
+.tools__img {
+  background-image: url('../../assets/img/toolsimg.png');
 }
 
 .preview {

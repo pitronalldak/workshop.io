@@ -11,7 +11,19 @@
 
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50%;
+  background-position: 52%;
+  @media (min-width: $mq-md) {
+    background-position: 52%;
+  }
+}
+
+.relative-bg {
+  height: 500px;
+  width: 100%;
+  margin-top: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /**

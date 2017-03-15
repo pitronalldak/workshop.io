@@ -2,7 +2,7 @@ import objectAssign from 'object-assign';
 
 import {
     HANDLE_UPLOAD_PANEL_LINK
-} from '../actions/main';
+} from '../actions/actions';
 
 const initialState = {
     showUploadPanel: false,
