@@ -43,7 +43,6 @@ module.exports = {
                 }]
             },
             {
-                // test: /\.(woff2|woff|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 test: /\.(woff2|woff|ttf|eot|svg)(\?.*$|$)/,
                 loader: 'file-loader?name=fonts/[name].[ext]',
                 include: [
