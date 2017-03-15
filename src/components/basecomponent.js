@@ -6,7 +6,6 @@ import RightSide from './rightside';
 class BaseComponent extends Component {
 
     render() {
-        const {children} = this.props;
         return (
             <div className="previews">
                 {this.props.children}
