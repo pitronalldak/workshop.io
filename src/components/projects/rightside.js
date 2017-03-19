@@ -1,18 +1,19 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Navigation from './navigation';
-import SocialButtons from './socialbuttons';
+import Project1 from './project1';
+import Project2 from './project2';
 
 class RightSide extends Component {
 
 
     render() {
         return (
-            <div>
-                <Navigation />
-                <figure className="relative-bg tools__img"></figure>
-                <SocialButtons />
+            <div className="tab" id="portfolio">
+                <ul>
+                    <Project1 />
+                    <Project2 />
+                </ul>
             </div>
         );
     }

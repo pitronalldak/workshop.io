@@ -1,25 +1,25 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Navigation from './common/navigation';
-class BaseComponent extends Component {
+import LeftSide from './leftside';
+import RightSide from './rightside';
+class Tools extends Component {
 
     render() {
-
         return (
-            <div>
-                <Navigation/>
-                {this.props.children}
+            <div className="previews">
+                <LeftSide />
+                <RightSide />
             </div>
         );
     }
 }
 
-BaseComponent.PropTypes = {
+Tools.PropTypes = {
     children: PropTypes.element.isRequired
 };
 
 // const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
 // const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default BaseComponent;
+export default Tools;

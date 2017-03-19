@@ -50,6 +50,23 @@
   }
 }
 
+li.preview {
+  padding: 2em 2em;
+  height: 92vh;
+}
+
+li.preview__next {
+  height: 100vh;
+}
+
+.nav__wrapper {
+  height: 8vh;
+}
+
+.nav__buttons {
+  margin-left: 45%;
+}
+
 /**
  * Blog Post Preview
  * On the Blog page
@@ -79,8 +96,8 @@
   background-image: url('../../assets/img/bgleftmain.jpg');
 }
 
-.tools__img {
-  background-image: url('../../assets/img/toolsimg.png');
+.project1__img {
+  background-image: url('../../assets/img/chain.cloud.png');
 }
 
 .preview {

@@ -1,13 +1,16 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
+import LeftSide from './leftside';
+import RightSide from './rightside';
 
-class Portfolio extends Component {
+class Projects extends Component {
 
     render() {
         return (
-            <div>
-                Portfolio
+            <div className="previews">
+                <LeftSide />
+                <RightSide />
             </div>
         );
     }
@@ -20,4 +23,4 @@ class Portfolio extends Component {
 // const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
 // const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default Portfolio;
+export default Projects;

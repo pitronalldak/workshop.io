@@ -10,6 +10,6 @@ import './assets/_sass/index.scss';
 
 render(
   <Provider store={store}>
-      <Router history={hashHistory} routes={routes} />
+      <Router history={browserHistory} routes={routes} />
   </Provider>, document.getElementById('root')
 );

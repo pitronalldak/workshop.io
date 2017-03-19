@@ -1,25 +1,23 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Navigation from './common/navigation';
-class BaseComponent extends Component {
+class LeftSide extends Component {
+
 
     render() {
-
         return (
             <div>
-                <Navigation/>
-                {this.props.children}
+                <figure className="absolute-bg project1__img"></figure>
             </div>
         );
     }
 }
 
-BaseComponent.PropTypes = {
-    children: PropTypes.element.isRequired
-};
+// BaseComponent.PropTypes = {
+//     showUploadPanel: PropTypes.bool.isRequired
+// };
 
 // const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
 // const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default BaseComponent;
+export default LeftSide;
