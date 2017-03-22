@@ -92,12 +92,37 @@ li.preview__next {
   }
 }
 
+.tools__img {
+  background-image: url('../../assets/img/toolsimg.png');
+}
+
 .preview__img {
   background-image: url('../../assets/img/bgleftmain.jpg');
 }
 
 .project1__img {
   background-image: url('../../assets/img/chain.cloud.png');
+}
+
+.project__technology {
+  background-image: url('../../assets/img/toolsimg.png');
+  width: 206.75px;
+  height: 89.33px;
+  display: inline-block;
+}
+
+.project__technology__typescript {
+  background-image: url('../../assets/img/toolsimg.png');
+  width: 206.75px;
+  height: 89.33px;
+  background-position: 0 -89.33px;
+}
+
+.project__technology__node {
+  background-image: url('../../assets/img/toolsimg.png');
+  width: 206.75px;
+  height: 89.33px;
+  background-position: 0 -179.66px;
 }
 
 .preview {

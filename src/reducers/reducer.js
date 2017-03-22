@@ -1,20 +1,15 @@
 import objectAssign from 'object-assign';
 
-import {
-    HANDLE_UPLOAD_PANEL_LINK
-} from '../actions/actions';
+import ProjectBackground from '../actions/actions';
 
 const initialState = {
-    showUploadPanel: false,
-    products: [],
-    balance: 0,
-    basketProducts: []
+    ProjectBackground: 'project1',
 };
 
 function mainReducer(state = initialState, action) {
     switch (action.type) {
-        case HANDLE_UPLOAD_PANEL_LINK:
-            return objectAssign({}, state, {showUploadPanel: !state.showUploadPanel});
+        case ProjectBackground:
+            return objectAssign({}, state, {ProjectBackground: action.payload});
         default:
             return state;
     }

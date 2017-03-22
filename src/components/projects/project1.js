@@ -1,11 +1,17 @@
 import React, {Component, PropTypes} from 'react';
-import {connect} from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { Watch } from 'scrollmonitor-react';
+import Actions from '../../actions/actions';
 
-class Project1 extends Component {
+export default Watch(class Project1 extends React.Component {
+
 
 
     render() {
+        const {setProjectBackground} = this.props;
+        if (this.props.isInViewport) {
+            setProjectBackground('project1');
+        }
+
         return (
             <li className="preview">
                     <h2>Chain.Cloud</h2>
@@ -25,16 +31,10 @@ class Project1 extends Component {
                         </ul>
                     </p>
                     <h3 className="preview__header">Implemented technologies</h3>
+                    <figure className="project__technology"></figure>
+                    <figure className="project__technology project__technology__typescript"></figure>
+                    <figure className="project__technology project__technology__node"></figure>
             </li>
         );
     }
-}
-
-// BaseComponent.PropTypes = {
-//     showUploadPanel: PropTypes.bool.isRequired
-// };
-
-// const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
-// const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
-
-export default Project1;
+})

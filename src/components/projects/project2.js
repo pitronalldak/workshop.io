@@ -1,11 +1,19 @@
 import React, {Component, PropTypes} from 'react';
-import {connect} from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { Watch } from 'scrollmonitor-react';
+import Actions from '../../actions/actions';
 
-class Project2 extends Component {
+export default Watch(class Project2 extends React.Component {
+    state = {
+        active: false
+    };
 
 
     render() {
+        const {setProjectBackground} = this.props;
+        if (this.props.isInViewport) {
+            setProjectBackground('project2');
+        }
+
         return (
             <li className="preview preview__next">
                 <h2>TicketCloud</h2>
@@ -28,13 +36,4 @@ class Project2 extends Component {
             </li>
         );
     }
-}
-
-// BaseComponent.PropTypes = {
-//     showUploadPanel: PropTypes.bool.isRequired
-// };
-
-// const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
-// const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
-
-export default Project2;
+})
