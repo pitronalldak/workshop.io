@@ -1,6 +1,6 @@
 import objectAssign from 'object-assign';
 
-import ProjectBackground from '../actions/actions';
+import { ProjectBackground } from '../actions/actions';
 
 const initialState = {
     ProjectBackground: 'project1',

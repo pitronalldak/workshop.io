@@ -1,23 +1,26 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Actions from '../../actions/actions';
+
 class LeftSide extends Component {
 
 
     render() {
         return (
-            <div>
-                <figure className="absolute-bg project1__img"></figure>
+            <div className="image__scroll">
+                <img className="project1__img" src={'src/assets/img/' + this.props.ProjectBackground + '.png'}/>
             </div>
         );
     }
 }
 
-// BaseComponent.PropTypes = {
-//     showUploadPanel: PropTypes.bool.isRequired
-// };
+const mapStateToProps = (state) => {
+    return {
+        ProjectBackground: state.ProjectBackground,
+    }
+};
 
-// const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
-// const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
+const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default LeftSide;
+export default connect(mapStateToProps, mapDispatchToProps)(LeftSide);

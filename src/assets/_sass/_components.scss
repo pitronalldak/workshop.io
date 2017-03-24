@@ -101,7 +101,13 @@ li.preview__next {
 }
 
 .project1__img {
-  background-image: url('../../assets/img/chain.cloud.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: auto;
 }
 
 .project__technology {
@@ -123,6 +129,15 @@ li.preview__next {
   width: 206.75px;
   height: 89.33px;
   background-position: 0 -179.66px;
+}
+
+.project__link {
+  @include border-slide();
+  cursor: pointer;
+}
+
+.project__link__title {
+  margin-top: 15px;
 }
 
 .preview {

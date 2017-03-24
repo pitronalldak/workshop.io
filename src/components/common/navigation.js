@@ -31,7 +31,7 @@ class Navigation extends Component {
                     <ul className="tabs">
                         <li onClick={this.goToIndex} className={path == urls.index.path ? 'tabs__item active': 'tabs__item'}>Tools</li>
                         <li onClick={this.goToProjects} className={path == urls.projects.path ? 'tabs__item active': 'tabs__item'}>Projects</li>
-                        <li onClick={this.goToContributions} className={path == urls.contributions.path ? 'tabs__item active': 'tabs__item'}>Contributions</li>
+                        {/*<li onClick={this.goToContributions} className={path == urls.contributions.path ? 'tabs__item active': 'tabs__item'}>Contributions</li>*/}
                         <li onClick={this.goToBlog} className={path == urls.blog.path ? 'tabs__item active': 'tabs__item'}>Blog</li>
                     </ul>
                 </div>

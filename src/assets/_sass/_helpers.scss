@@ -26,6 +26,15 @@
   background-position: center;
 }
 
+.image__scroll {
+  overflow: auto;
+  background-color: $color-alpha--light!important;
+}
+
+.image__scroll:after {
+  background-color: transparent!important;
+}
+
 /**
  * Color Helpers
  */
