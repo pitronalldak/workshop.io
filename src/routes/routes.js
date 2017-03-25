@@ -6,6 +6,7 @@ import Projects from '../components/projects/projects page';
 import Contributions from '../components/contributions/contributions page';
 import Blog from '../components/blog/blog page';
 import NotFoundComponent from '../components/404/notfoundcomponent';
+import Article from '../components/article/article';
 
 export const urls = {
     index: {
@@ -19,6 +20,9 @@ export const urls = {
     },
     blog: {
         path: '/blog'
+    },
+    article: {
+        path: '/blog/:name'
     }
 };
 
@@ -28,7 +32,9 @@ export default (
             <IndexRoute component={Tools}/>
             <Route path={urls.projects.path} component={Projects} />
             <Route path={urls.contributions.path} component={Contributions} />
-            <Route path={urls.blog.path} component={Blog} />
+            <Route path={urls.blog.path} component={Blog}>
+                <Route path={urls.article.path} component={Article} />
+            </Route>
         </Route>
         <Route path="*" component={NotFoundComponent} />
     </Route>

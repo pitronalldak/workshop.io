@@ -4,6 +4,9 @@ import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Actions from '../../actions/actions';
+import Header from './header';
+import Content from './content';
+import Next from './next';
 
 class Article extends React.Component {
 
@@ -14,14 +17,7 @@ class Article extends React.Component {
         // }
 
         return (
-                <li className="preview preview__blog" onMouseOver={() => this.props.setArticleBackground('article' + (this.props.i+1))}>
-                    <a className="preview__link" href={this.props.articleLink}>
-                        <span className="preview__date" >{this.props.date}</span>
-                        <h2 className="preview__header">{this.props.title}</h2>
-                        <p className="preview__excerpt preview__excerpt__blog">{this.props.excerpt}</p>
-                        <span className="preview__more">Read More</span>
-                    </a>
-                </li>
+            <div>1.5</div>
         );
     }
 }

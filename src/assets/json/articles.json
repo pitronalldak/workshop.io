@@ -9,7 +9,8 @@
         "link": {
             "linkTitle": "http://chain.cloud/",
             "linkItself": "http://chain.cloud/"
-        }
+        },
+        "articleLink": "http://localhost:3000/blog/Chain.Cloud"
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@
         "link": {
             "linkTitle": "https://ticketscloud.org/",
             "linkItself": "https://ticketscloud.org/"
-        }
+        },
+        "articleLink": "http://localhost:3000/blog/TicketCloud"
     },
     {
         "id": 2,
@@ -33,6 +35,7 @@
         "link": {
             "linkTitle": "https://ticketscloud.org/",
             "linkItself": "https://ticketscloud.org/"
-        }
+        },
+        "articleLink": "http://localhost:3000/blog/TicketCloud"
     }
 ]

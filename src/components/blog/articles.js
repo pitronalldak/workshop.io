@@ -17,7 +17,7 @@ let articles = require('../../assets/json/articles.json');
             return (
                 <ul>
                     {articles.map(function(article, i) {
-                        return <Article key={i} i={i} title={article.title} date={article.date} excerpt={article.excerpt}/>;
+                        return <Article key={i} i={i} title={article.title} date={article.date} excerpt={article.excerpt} articleLink={article.articleLink}/>;
                     })}
                 </ul>
             );
