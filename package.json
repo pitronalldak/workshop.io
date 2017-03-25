@@ -32,6 +32,7 @@
     "eslint-plugin-react": "^6.2.0",
     "fast-async": "^6.0.32",
     "file-loader": "^0.10.1",
+    "fullpage-react": "^2.0.3",
     "html-webpack-plugin": "^2.22.0",
     "node-sass": "^4.5.0",
     "pipe-error-stop": "0.0.9",
@@ -56,6 +57,7 @@
     "yargs": "^3.32.0"
   },
   "devDependencies": {
-    "file-loader": "^0.10.1"
+    "file-loader": "^0.10.1",
+    "json-loader": "^0.5.4"
   }
 }

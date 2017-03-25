@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Chain.Cloud",
+        "date": "06/2016 - 07/2016",
+        "description": "Custom Blockchain (DLT) technology products and consulting. Chain.Cloud works in partnership with its clients, advising them how to use/integrate Blockchain technology in order to meet their business objectives or overcome problems.",
+        "development": ["Front end development, include:", "blockchain implementation, include:", "back end development, include:"],
+        "technologies": ["project__technology__react","project__technology__typescript","project__technology__node"],
+        "link": {
+            "linkTitle": "http://chain.cloud/",
+            "linkItself": "http://chain.cloud/"
+        }
+    },
+    {
+        "id": 2,
+        "title": "TicketCloud",
+        "date": "06/2016 - 07/2016",
+        "description": "Custom Blockchain (DLT) technology products and consulting. Chain.Cloud works in partnership with its clients, advising them how to use/integrate Blockchain technology in order to meet their business objectives or overcome problems.",
+        "development": ["Front end development, include:", "blockchain implementation, include:", "back end development, include:"],
+        "technologies": ["project__technology__react","project__technology__typescript","project__technology__node"],
+        "link": {
+            "linkTitle": "https://ticketscloud.org/",
+            "linkItself": "https://ticketscloud.org/"
+        }
+    }
+]

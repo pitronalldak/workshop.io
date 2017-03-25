@@ -4,6 +4,7 @@ import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Actions from '../../actions/actions';
+let projects = (require('../../assets/json/projects.json'));
 
 export /*default Watch(*/class Project1 extends React.Component {
 
@@ -12,17 +13,13 @@ export /*default Watch(*/class Project1 extends React.Component {
         if (this.props.isInViewport) {
             () => setProjectBackground('project1');
         }
-
         return (
             <li className="preview" onMouseOver={() => this.props.setProjectBackground('project1')}>
-                <h2>Chain.Cloud</h2>
-                <span className="preview__date">06/2016 - 07/2016</span>
+                <h2 className="project__title">{projects[0].title}</h2>
+                <span className="preview__date">{projects[0].date}</span>
                 <br/><br/>
                 <h3 className="preview__header">Project description</h3>
-                <p className="preview__excerpt">Custom Blockchain (DLT) technology
-                    products and consulting <br/> Chain.Cloud works in partnership with its clients,
-                    advising them how to use/integrate Blockchain technology in order to meet
-                    their business objectives or overcome problems. </p>
+                <p className="preview__excerpt">{projects[0].description}</p>
                 <h3 className="preview__header">Development</h3>
                 <div className="preview__excerpt">
                     <ul>
@@ -32,10 +29,10 @@ export /*default Watch(*/class Project1 extends React.Component {
                     </ul>
                 </div>
                 <h3 className="preview__header">Implemented technologies</h3>
-                <figure className="project__technology" />
+                <figure className="project__technology project__technology__react" />
                 <figure className="project__technology project__technology__typescript" />
                 <figure className="project__technology project__technology__node" />
-                <h3 className="project__link__title"><Link className='project__link' to="http://chain.cloud/">http://chain.cloud/</Link></h3>
+                <h3 className="project__link__title"><Link className='project__link' href="http://chain.cloud/" target="_blank">http://chain.cloud/</Link></h3>
             </li>
         );
     }

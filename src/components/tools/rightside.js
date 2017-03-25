@@ -9,6 +9,7 @@ class RightSide extends Component {
     render() {
         return (
             <div>
+                <div className="place__forHeader"></div>
                 <figure className="relative-bg tools__img"></figure>
                 <SocialButtons />
             </div>

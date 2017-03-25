@@ -1,27 +1,25 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import LeftSide from './leftside';
-import RightSide from './rightside';
+import Articles from './articles';
 
-class Blog extends Component {
+class RightSide extends Component {
+
 
     render() {
-
         return (
-            <div className="previews">
-                <LeftSide />
-                <RightSide />
+            <div className="tab active">
+                <Articles/>
             </div>
         );
     }
 }
 
-// MainPage.PropTypes = {
+// BaseComponent.PropTypes = {
 //     showUploadPanel: PropTypes.bool.isRequired
 // };
 
 // const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
 // const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default Blog;
+export default RightSide;

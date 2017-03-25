@@ -5,11 +5,10 @@ import Actions from '../../actions/actions';
 
 class LeftSide extends Component {
 
-
     render() {
         return (
             <div className="image__scroll">
-                <img className="leftSide__img" src={'src/assets/img/' + this.props.ProjectBackground + '.png'}/>
+                <img className="leftSide__img" src={'src/assets/img/' + this.props.ArticleBackground + '.png'}/>
             </div>
         );
     }
@@ -17,7 +16,7 @@ class LeftSide extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        ProjectBackground: state.ProjectBackground,
+        ArticleBackground: state.ArticleBackground,
     }
 };
 

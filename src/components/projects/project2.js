@@ -15,8 +15,8 @@ export /*Watch(*/class Project2 extends React.Component {
         }
 
         return (
-            <li className="preview preview__next" onMouseOver={() => this.props.setProjectBackground('project2')}>
-                <h2>TicketCloud</h2>
+            <li className="preview" onMouseOver={() => this.props.setProjectBackground('project2')}>
+                <h2 className="project__title">TicketCloud</h2>
                 <span className="preview__date">06/2016 - 07/2016</span>
                 <br/><br/>
                 <h3 className="preview__header">Project description</h3>
@@ -36,7 +36,7 @@ export /*Watch(*/class Project2 extends React.Component {
                 <figure className="project__technology" />
                 <figure className="project__technology project__technology__typescript" />
                 <figure className="project__technology project__technology__node" />
-                <h3 className="project__link__title"><Link className='project__link' to="https://ticketscloud.org/">https://ticketscloud.org/</Link>
+                <h3 className="project__link__title"><Link className='project__link' href="https://ticketscloud.org/" target="_blank">https://ticketscloud.org/</Link>
                 </h3>
             </li>
         );

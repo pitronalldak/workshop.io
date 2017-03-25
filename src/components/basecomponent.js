@@ -3,11 +3,16 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Navigation from './common/navigation';
 class BaseComponent extends Component {
+    paneDidMount = (node) => {
+        if (node) {
+            node.addEventListener('scroll', () => console.log('scroll!'));
+        }
+    };
 
     render() {
 
         return (
-            <div>
+            <div ref={this.paneDidMount}>
                 <Navigation/>
                 {this.props.children}
             </div>

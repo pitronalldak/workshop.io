@@ -52,15 +52,32 @@
 
 li.preview {
   padding: 2em 2em;
-  height: 92vh;
+  height: 100vh;
+  min-height: 800px;
 }
 
-li.preview__next {
-  height: 100vh;
+li.preview__blog {
+  padding: 2em 2em;
+  height: 50vh;
+  min-height: 400px;
+}
+
+.place__forHeader {
+  height: 8vh;
+  min-height: 64px;
 }
 
 .nav__wrapper {
   height: 8vh;
+  min-height: 64px;
+  position: fixed;
+  width: 55%;
+  background-color: $color-grey;
+  z-index: 2;
+  @media (min-width: $mq-md) {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
 }
 
 .nav__buttons {
@@ -100,7 +117,14 @@ li.preview__next {
   background-image: url('../../assets/img/bgleftmain.jpg');
 }
 
-.project1__img {
+p.preview__excerpt__blog {
+  height: 20vh;
+  min-height: 155px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leftSide__img {
   position: absolute;
   top: 0;
   left: 0;
@@ -108,6 +132,10 @@ li.preview__next {
   background-size: contain;
   background-repeat: no-repeat;
   overflow: auto;
+}
+
+.project__title {
+  margin-top: 15px;
 }
 
 .project__technology {
@@ -166,7 +194,7 @@ li.preview__next {
     padding: 2em 1em;
 
     @media (min-width: $mq-md) {
-      padding: 4em 8em;
+      padding: 2em 2em;
     }
 
     @media (min-width: $mq-xxl) {
