@@ -1,9 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Project1 from './project1';
-import Project2 from './project2';
+import Actions from '../../actions/actions';
+import Project from './project';
 import {Fullpage, Slide, changeFullpageSlide} from 'fullpage-react';
+let projects = (require('../../assets/json/projects.json'));
 
 let fullPageOptions = {
     // for mouse/wheel events
@@ -23,12 +24,10 @@ class RightSide extends Component {
         super(props);
         this.state = {
             active: {
-                Fullpage: 0,
-                horizontalSlider1: 0
+                Fullpage: 0
             },
             previous: {
-                Fullpage: 0,
-                horizontalSlider1: 0
+                Fullpage: 0
             }
         };
 
@@ -38,6 +37,17 @@ class RightSide extends Component {
 
     onSlideChangeStart(name, state) {
         console.log('slide STARTED for', name, state.activeSlide);
+        const {setProjectBackground} = this.props;
+        let i = 1;
+        if (this.props.ProjectBackground == 'project1') {
+            i = 2
+        } else {
+            if (i = projects.length) {
+                i = 1
+            } else i++
+        }
+        setProjectBackground('project'+i);
+        console.log('project'+i);
         var sliderState = { previous: {} };
         sliderState.previous[name] = state.activeSlide;
         this.setState(sliderState);
@@ -54,19 +64,21 @@ class RightSide extends Component {
     render() {
         return (
         <Fullpage className="tab" onSlideChangeStart={this.onSlideChangeStart} onSlideChangeEnd={this.onSlideChangeEnd} {...fullPageOptions}>
-
-            <Slide><Project1 /></Slide>
-            <Slide><Project2 /></Slide>
+            {projects.map(function(project, i) {
+            return <Slide key={i}><Project key={i} i={i} title={project.title} date={project.date} description={project.description}
+            development={project.development} technologies={project.technologies} link={project.link} /></Slide>
+            })}
         </Fullpage>
         );
     }
 }
 
-// BaseComponent.PropTypes = {
-//     showUploadPanel: PropTypes.bool.isRequired
-// };
+const mapStateToProps = (state) => {
+    return {
+        ProjectBackground: state.ProjectBackground,
+    }
+};
 
-// const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
-// const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
+const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default RightSide;
+export default connect(mapStateToProps, mapDispatchToProps)(RightSide);
