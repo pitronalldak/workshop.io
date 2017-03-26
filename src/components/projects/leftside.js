@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Actions from '../../actions/actions';
+import Actions from '../../actions/projects';
 
 class LeftSide extends Component {
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, IndexRoute, hashHistory } from 'react-router';
-import BaseComponent from '../components/basecomponent';
-import Tools from '../components/tools/tools page';
-import Projects from '../components/projects/projects page';
-import Contributions from '../components/contributions/contributions page';
+import BaseComponent from '../components/BaseComponent';
+import MainPage from '../components/main/MainPage';
+import Projects from '../components/projects/ProjectsPage';
+import Contributions from '../components/contributions/ContributionsPage';
 import Blog from '../components/blog/blog page';
-import NotFoundComponent from '../components/404/notfoundcomponent';
+import NotFoundComponent from '../components/common/NotFoundPage';
 import Article from '../components/article/article';
 import SiteTitle from '../components/common/site title';
 
@@ -30,7 +30,7 @@ export const urls = {
 export default (
     <Route>
         <Route path={urls.index.path} component={BaseComponent}>
-            <IndexRoute component={Tools}/>
+            <IndexRoute component={MainPage}/>
             <Route path={urls.projects.path} component={SiteTitle}>
                 <IndexRoute component={Projects} />
                 /*<Route path={urls.contributions.path} component={Contributions} />*/

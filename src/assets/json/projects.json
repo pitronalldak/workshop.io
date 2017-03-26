@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "name": "chainCloud",
         "title": "Chain.Cloud",
         "date": "06/2016 - 07/2016",
         "description": "Custom Blockchain (DLT) technology products and consulting. Chain.Cloud works in partnership with its clients, advising them how to use/integrate Blockchain technology in order to meet their business objectives or overcome problems.",
@@ -13,6 +14,7 @@
     },
     {
         "id": 2,
+        "name": "ticketCloud",
         "title": "TicketCloud",
         "date": "06/2016 - 07/2016",
         "description": "Custom Blockchain (DLT) technology products and consulting. Chain.Cloud works in partnership with its clients, advising them how to use/integrate Blockchain technology in order to meet their business objectives or overcome problems.",

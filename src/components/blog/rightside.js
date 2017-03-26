@@ -20,6 +20,6 @@ class RightSide extends Component {
 // };
 
 // const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
-// const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
+// const mapDispatchToProps = (dispatch) => (bindActionCreators(new ProjectsActions,dispatch));
 
 export default RightSide;

@@ -1,8 +1,10 @@
 import React, {Component, PropTypes} from 'react';
-import {connect} from 'react-redux';
-import { bindActionCreators } from 'redux';
-import Navigation from './common/navigation';
+
+import HeaderComponent from './HeaderComponent';
+
+
 class BaseComponent extends Component {
+
     paneDidMount = (node) => {
         if (node) {
             node.addEventListener('scroll', () => console.log('scroll!'));
@@ -13,7 +15,7 @@ class BaseComponent extends Component {
 
         return (
             <div ref={this.paneDidMount}>
-                <Navigation/>
+                <HeaderComponent />
                 {this.props.children}
             </div>
         );
@@ -23,8 +25,5 @@ class BaseComponent extends Component {
 BaseComponent.PropTypes = {
     children: PropTypes.element.isRequired
 };
-
-// const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
-// const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
 export default BaseComponent;
