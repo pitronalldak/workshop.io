@@ -21,6 +21,10 @@
     padding-right: 5em;
   }
 
+  .tabs__item {
+    margin: 0.4em 1em;
+  }
+
   ul {
     list-style-type: none;
   }
@@ -58,16 +62,24 @@ li.preview {
 
 li.preview__blog {
   padding: 2em 2em;
-  height: 50vh;
-  min-height: 400px;
+  height: 46vh;
+  min-height: 368px;
 }
 
 .place__forHeader {
-  height: 8vh;
-  min-height: 64px;
+  height: 8vh!important;
+  min-height: 64px!important;
+  position: relative!important;
+  width: 100%!important;
+  background-color: $color-grey!important;
+}
+
+.place__forHeader:after {
+  background-color: $color-grey!important;
 }
 
 .site__title {
+  z-index: 2;
   height: 8vh;
   min-height: 64px;
   width: 45%;
@@ -133,16 +145,14 @@ li.preview__blog {
 }
 
 p.preview__excerpt__blog {
-  height: 20vh;
-  min-height: 155px;
+  height: 21vh;
+  min-height: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .leftSide__img__projects {
-  position: absolute;
-  top: 8vh;
-  left: 0;
+  position: relative;
   width: 100%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -150,7 +160,8 @@ p.preview__excerpt__blog {
 }
 
 .leftSide__img__blog {
-  height: 50vh;
+  height: 46vh;
+  min-height: 368px;
 }
 
 .project__title {

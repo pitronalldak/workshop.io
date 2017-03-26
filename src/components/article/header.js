@@ -1,30 +1,25 @@
 import React, {Component, PropTypes} from 'react';
-import { Watch } from 'scrollmonitor-react';
 import {Link} from 'react-router';
-import {connect} from 'react-redux';
-import { bindActionCreators } from 'redux';
-import Actions from '../../actions/actions';
 
-class Article extends React.Component {
+export default class Header extends React.Component {
 
     render() {
-        const {setProjectBackground} = this.props;
-        // if (this.props.isInViewport) {
-        //     () => setProjectBackground('project1');
-        // }
-
+        let figureStyle = {
+            backgroundImage: "url('../src/assets/img/article1.png')"
+        };
         return (
-            <div>1</div>
+            <header className="section-padding--lg mast rellax">
+                <Link className="nav nav--white" to="/blog">
+                    <i className="fa fa-lg fa-arrow-left"></i>
+                    <span>Back to all posts</span>
+                </Link>
+                <figure className="absolute-bg mast__img" style={figureStyle}></figure>
+                <div className="mast__container">
+                    <span><time></time></span>
+                    <h1></h1>
+                    <span></span>
+                </div>
+            </header>
         );
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-        ArticleBackground: state.ArticleBackground,
-    }
-};
-
-const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
-
-export default connect(mapStateToProps, mapDispatchToProps)(Article);

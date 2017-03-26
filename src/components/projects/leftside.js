@@ -9,7 +9,7 @@ class LeftSide extends Component {
     render() {
         return (
             <div className="image__scroll">
-                <div className="site__title"><h1>WorkShop</h1></div>
+                <div className="place__forHeader"></div>
                 <img className="leftSide__img__projects" src={'src/assets/img/' + this.props.ProjectBackground + '.png'}/>
             </div>
         );

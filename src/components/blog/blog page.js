@@ -10,6 +10,7 @@ class Blog extends Component {
 
         return (
             <div className="previews">
+                <div className="place__forHeader"></div>
                 <LeftSide />
                 <RightSide />
             </div>

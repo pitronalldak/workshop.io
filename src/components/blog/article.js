@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import { Watch } from 'scrollmonitor-react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -9,9 +8,6 @@ class Article extends React.Component {
 
     render() {
         const {setProjectBackground} = this.props;
-        // if (this.props.isInViewport) {
-        //     () => setProjectBackground('project1');
-        // }
 
         return (
                 <li className="preview preview__blog" onMouseOver={() => this.props.setArticleBackground('article' + (this.props.i+1))}>

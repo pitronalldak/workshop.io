@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Actions from '../../actions/actions';
+import {setProjectBackground} from '../../actions/actions';
 import Project from './project';
 import {Fullpage, Slide, changeFullpageSlide} from 'fullpage-react';
 let projects = (require('../../assets/json/projects.json'));
@@ -30,24 +30,26 @@ class RightSide extends Component {
                 Fullpage: 0
             }
         };
-
         this.onSlideChangeStart = this.onSlideChangeStart.bind(this);
         this.onSlideChangeEnd = this.onSlideChangeEnd.bind(this);
     }
 
     onSlideChangeStart(name, state) {
-        console.log('slide STARTED for', name, state.activeSlide);
+        console.log(this.props.ProjectBackground);
         const {setProjectBackground} = this.props;
-        let i = 1;
-        if (this.props.ProjectBackground == 'project1') {
-            i = 2
+        console.log('slide STARTED for', name, state.activeSlide);
+        if (ij) {
+            if (this.props.ProjectBackground == 'project1') {
+                ij = 2
+            } else {
+                if (i == projects.length) {
+                    ij = 1
+                } else ij++
+            }
         } else {
-            if (i = projects.length) {
-                i = 1
-            } else i++
+            var ij =1;
         }
-        setProjectBackground('project'+i);
-        console.log('project'+i);
+        console.log('project'+ij);
         var sliderState = { previous: {} };
         sliderState.previous[name] = state.activeSlide;
         this.setState(sliderState);
@@ -79,6 +81,6 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
+const mapDispatchToProps = (dispatch) => bindActionCreators({setProjectBackground: setProjectBackground}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(RightSide);

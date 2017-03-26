@@ -1,17 +1,9 @@
 import React, {Component, PropTypes} from 'react';
-import { Watch } from 'scrollmonitor-react';
 import {Link} from 'react-router';
-import {connect} from 'react-redux';
-import { bindActionCreators } from 'redux';
-import Actions from '../../actions/actions';
 
-class Project extends React.Component {
+export default class Project extends React.Component {
 
     render() {
-        // const {setProjectBackground} = this.props;
-        // if (this.props.isInViewport) {
-        //     setProjectBackground('project1');
-        // }
         return (
             <li className="preview">
                 <h2 className="project__title">{this.props.title}</h2>
@@ -36,13 +28,3 @@ class Project extends React.Component {
         );
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-        ProjectBackground: state.ProjectBackground,
-    }
-};
-
-const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
-
-export default Watch(connect(mapStateToProps, mapDispatchToProps)(Project));
