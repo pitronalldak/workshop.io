@@ -2,44 +2,58 @@ import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ScrollAnim from 'rc-scroll-anim';
+const Element = ScrollAnim.Element;
 
 import ProjectsActions from '../../actions/projects';
 import ProjectComponent from './ProjectComponent';
 
 const projects = (require('../../assets/json/projects.json'));
 const ScrollOverPack = ScrollAnim.OverPack;
-ScrollAnim.scrollScreen.init({ loop: true, scrollInterval: 500, duration: 200 });
+ScrollAnim.scrollScreen.init({ loop: false, scrollInterval: 100, duration: 200 });
+
 
 class ProjectsScrollListComponent extends Component {
 
-    // renderScrollOverPackReplayOption = (id) => {
-    //     let ScrollOverPackOption;
-    //     if (id==0) {
-    //         return 'replay'
-    //     }
-    // }
-    //
-    // renderScrollOverPackAlwaysOption = (id, length) => {
-    //     let ScrollOverPackOption;
-    //     if (id==(length-1)) {
-    //         debugger
-    //         return '{false}'
-    //     }
-    // }
+    onChange = (id) =>
+        (mode, scrollName) => {
+            const {setProjectBackground} = this.props;
+            if ((window.pageYOffset == 0)
+                || ((window.pageYOffset < 900) && (id == 2) && (mode.mode == 'leave'))) {
+                setProjectBackground('project1');
+            } else if (((window.pageYOffset < 900) && (id == 2) && (mode.mode == 'enter'))
+                || ((window.pageYOffset < 900) && (id == 1) && (mode.mode == 'enter'))
+                || ((window.pageYOffset < 900) && (id == 3) && (mode.mode == 'leave'))) {
+                setProjectBackground('project2');
+            } else if (window.pageYOffset < 1800) {
+                setProjectBackground('project3');
+            } else if (window.pageYOffset < 2700) {
+                setProjectBackground('project4');
+            } else if (window.pageYOffset < 3600) {
+                setProjectBackground('project5');
+            } else if (window.pageYOffset < 4500) {
+                console.log("<4500");
+            }
+            console.log(id);
+            console.log(mode);
+            console.log(scrollName);
+            console.log(window.pageYOffset);
+        };
 
     render () {
 
         return (
             <div >
-                {projects.map(project =>
+                {projects.map((project, key) =>
                     <div
                         id={'page'+project.id}
                         key={project.id}
                     >
                         <ScrollOverPack
+                            onChange={this.onChange(project.id)}
+                            id={project.id}
                             key={project.id}
                             playScale={1}
-                            location={'page'+project.id}
+                            location={'page'+project.id}  //finish scroll of last element
                         >
                             <ProjectComponent
                                 key={project.id}
