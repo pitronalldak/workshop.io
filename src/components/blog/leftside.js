@@ -10,7 +10,7 @@ class LeftSide extends Component {
         return (
             <div className="image__scroll blog__left__pics">
                 {articles.map(function(article, i) {
-                    return <img key={i} className="leftSide__img__blog" src={'src/assets/img/article' + (i+1) + '.png'}/>
+                    return <img key={i} className="leftSide__img__blog" src={'src/assets/img/article' + (article.id) + '.png'}/>
                 })}
             </div>
         );

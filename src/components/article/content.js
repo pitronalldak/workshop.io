@@ -5,7 +5,11 @@ export class Content extends React.Component {
     render() {
 
         return (
-            <div>1.5</div>
+            <section className="section-padding bg-grey">
+                <div className="post">
+                    {this.props.text}
+                </div>
+            </section>
         );
     }
 }

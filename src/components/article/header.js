@@ -5,7 +5,7 @@ export default class Header extends React.Component {
 
     render() {
         let figureStyle = {
-            backgroundImage: "url('../src/assets/img/article1.png')"
+            backgroundImage: 'url(../src/assets/img/article' + this.props.id + '.png)'
         };
         return (
             <header className="section-padding--lg mast rellax">
@@ -15,8 +15,8 @@ export default class Header extends React.Component {
                 </Link>
                 <figure className="absolute-bg mast__img" style={figureStyle}></figure>
                 <div className="mast__container">
-                    <span><time></time></span>
-                    <h1></h1>
+                    <span><time>{this.props.date}</time></span>
+                    <h1>{this.props.title}</h1>
                     <span></span>
                 </div>
             </header>

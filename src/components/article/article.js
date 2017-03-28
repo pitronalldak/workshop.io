@@ -1,26 +1,57 @@
 import React, {Component, PropTypes} from 'react';
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Actions from '../../actions/projects';
-import Header from './header';
-import { Content } from './content';
+import Post from './post';
 import { Next } from './next';
-
+let articles = require('../../assets/json/articles.json');
+let chosenArticle = {};
+let nextArticle = {};
 class Article extends React.Component {
 
-    render() {
+    componentWillMount() {
+        let path = this.context.router.getCurrentLocation().pathname;
+        console.log(path);
+        let splittedPath = path.split("/");
+        let id = splittedPath[(splittedPath.length -1)]
+        console.log(id);
+        articles.map((article) => {
+            if (article.id == id) {
+                chosenArticle = article;
+                console.log(chosenArticle);
+            } else if (article.id == (parseInt(id) + 1)) {
+                nextArticle = article;
+                console.log(nextArticle);
+                console.log(nextArticle.title);
+            }
+        })
+    }
 
+    render() {
         return (
             <div>
                 <div className="place__forHeader"></div>
-                <Header />
-                <Content />
-                <Next />
+                <Post
+                    id={chosenArticle.id}
+                    title={chosenArticle.title}
+                    date={chosenArticle.date}
+                    text={chosenArticle.text}
+                    technologies={chosenArticle.technologies}
+                    link={chosenArticle.link}
+                />
+                <Next
+                    id={nextArticle.id}
+                    title={nextArticle.title}
+                />
             </div>
         );
     }
 }
+
+
+Article.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
 
 const mapStateToProps = (state) => {
     return {

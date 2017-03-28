@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory, hashHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router';
 import store from './store/store';
 import routes from './routes/routes';
 
