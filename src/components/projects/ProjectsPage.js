@@ -3,24 +3,23 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import ProjectsScrollListComponent from './ProjectsScrollListComponent';
-
 import ProjectsActions from '../../actions/projects';
+
+const projects = (require('../../assets/json/projects.json'));
 
 class ProjectsPage extends Component {
 
     render() {
 
-        const {background} = this.props;
-
+        const {visibleProjectId} = this.props;
+        console.log(visibleProjectId)
         return (
             <div className="previews">
                 <div className="image__scroll">
                     <div className="place__forHeader"></div>
-                    <img className="leftSide__img__projects" src={'src/assets/img/' + this.props.background + '.png'}/>
+                    {/*<img className="leftSide__img__projects" src={projects.find(p => p.id == visibleProjectId)}/>*/}
                 </div>
-                <ProjectsScrollListComponent
-                    background={background}
-                />
+                <ProjectsScrollListComponent />
             </div>
         );
     }
@@ -28,7 +27,7 @@ class ProjectsPage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        background: state.projects.background,
+        visibleProjectId: state.projects.visibleProjectId,
     }
 };
 

@@ -3,22 +3,26 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Actions from '../../actions/projects';
 
+const projects = (require('../../assets/json/projects.json'));
+
 class LeftSide extends Component {
 
-
     render() {
+        const {visibleProjectId} = this.props;
+        console.log(visibleProjectId)
         return (
             <div className="image__scroll">
                 <div className="place__forHeader"></div>
-                <img className="leftSide__img__projects" src={'src/assets/img/' + this.props.ProjectBackground + '.png'}/>
+                <img className="leftSide__img__projects" src={projects.find(p => p.id == visibleProjectId).imgPath}/>
             </div>
         );
     }
 }
 
 const mapStateToProps = (state) => {
+    debugger
     return {
-        ProjectBackground: state.ProjectBackground,
+        visibleProjectId: state.projects.visibleProjectId,
     }
 };
 

@@ -9,34 +9,18 @@ import ProjectComponent from './ProjectComponent';
 
 const projects = (require('../../assets/json/projects.json'));
 const ScrollOverPack = ScrollAnim.OverPack;
-ScrollAnim.scrollScreen.init({ loop: false, scrollInterval: 100, duration: 200 });
+ScrollAnim.scrollScreen.init({ loop: false, scrollInterval: 300, duration: 500 });
 
 
 class ProjectsScrollListComponent extends Component {
+    state = {prevMode: 'leave'};
 
     onChange = (id) =>
         (mode, scrollName) => {
-            const {setProjectBackground} = this.props;
-            if ((window.pageYOffset == 0)
-                || ((window.pageYOffset < 900) && (id == 2) && (mode.mode == 'leave'))) {
-                setProjectBackground('project1');
-            } else if (((window.pageYOffset < 900) && (id == 2) && (mode.mode == 'enter'))
-                || ((window.pageYOffset < 900) && (id == 1) && (mode.mode == 'enter'))
-                || ((window.pageYOffset < 900) && (id == 3) && (mode.mode == 'leave'))) {
-                setProjectBackground('project2');
-            } else if (window.pageYOffset < 1800) {
-                setProjectBackground('project3');
-            } else if (window.pageYOffset < 2700) {
-                setProjectBackground('project4');
-            } else if (window.pageYOffset < 3600) {
-                setProjectBackground('project5');
-            } else if (window.pageYOffset < 4500) {
-                console.log("<4500");
+            if (this.state.prevMode === 'leave' && mode.mode == 'enter') {
+                this.props.setProjectBackground(mode.id);
             }
-            console.log(id);
-            console.log(mode);
-            console.log(scrollName);
-            console.log(window.pageYOffset);
+            this.setState({prevMode: mode.mode});
         };
 
     render () {
@@ -51,7 +35,6 @@ class ProjectsScrollListComponent extends Component {
                         <ScrollOverPack
                             onChange={this.onChange(project.id)}
                             id={project.id}
-                            key={project.id}
                             playScale={1}
                             location={'page'+project.id}  //finish scroll of last element
                         >
@@ -73,7 +56,7 @@ class ProjectsScrollListComponent extends Component {
 }
 
 ProjectsScrollListComponent.PropTypes = {
-    background: PropTypes.element.isRequired
+    setProjectBackground: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(new ProjectsActions, dispatch);
