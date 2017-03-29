@@ -20,7 +20,6 @@ class LeftSide extends Component {
 }
 
 const mapStateToProps = (state) => {
-    debugger
     return {
         visibleProjectId: state.projects.visibleProjectId,
     }
