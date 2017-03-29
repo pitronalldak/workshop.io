@@ -6,16 +6,16 @@ import { Content } from './content';
 export default class Post extends React.Component {
 
     render() {
-
+        const { article } = this.props;
         return (
             <article>
                 <Header
-                    id={this.props.id}
-                    title={this.props.title}
-                    date={this.props.date}
+                    id={article.id}
+                    title={article.title}
+                    date={article.date}
                 />
-                <Content text={this.props.text} />
-                <Author link={this.props.link}/>
+                <Content text={article.text} />
+                <Author link={article.link}/>
             </article>
         );
     }
