@@ -4,10 +4,10 @@ import BaseComponent from '../components/BaseComponent';
 import MainPage from '../components/main/MainPage';
 import Projects from '../components/projects/ProjectsPage';
 import Contributions from '../components/contributions/ContributionsPage';
-import Blog from '../components/blog/blog page';
+import Blog from '../components/blog/blogPage';
 import NotFoundComponent from '../components/common/NotFoundPage';
 import Article from '../components/article/article';
-import SiteTitle from '../components/common/site title';
+import SiteTitle from '../components/common/siteTitle';
 
 export const urls = {
     index: {
@@ -23,7 +23,7 @@ export const urls = {
         path: '/blog'
     },
     article: {
-        path: '/blog/:name'
+        path: '/blog/:id'
     }
 };
 
@@ -35,7 +35,9 @@ export default (
                 <IndexRoute component={Projects} />
                 /*<Route path={urls.contributions.path} component={Contributions} />*/
                 <Route path={urls.blog.path} component={Blog} />
-                <Route path={urls.article.path} component={Article} />
+                <Route path={urls.article.path} component={Article}>
+                    <Route path={urls.article.path} component={Article}/>
+                </Route>
             </Route>
         </Route>
         <Route path="*" component={NotFoundComponent} />

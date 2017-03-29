@@ -1,26 +1,38 @@
 import React, {Component, PropTypes} from 'react';
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Actions from '../../actions/projects';
-import Header from './header';
-import { Content } from './content';
+import Post from './post';
 import { Next } from './next';
 
+let articles = require('../../assets/json/articles.json');
 class Article extends React.Component {
 
-    render() {
+    componentDidUpdate() {
+        window.scrollTo(0,0);
+    }
 
+    render() {
+        const article  = articles.find(a => a.id == this.props.params.id);
+        const nextArticle = articles[articles.indexOf(articles.find(a => a.id == this.props.params.id)) + 1];
         return (
             <div>
                 <div className="place__forHeader"></div>
-                <Header />
-                <Content />
-                <Next />
+                <Post article={article}/>
+                {nextArticle ?
+                    <Next
+                        article={nextArticle}
+                    /> : null
+                }
             </div>
         );
     }
 }
+
+
+Article.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
 
 const mapStateToProps = (state) => {
     return {

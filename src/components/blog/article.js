@@ -7,11 +7,10 @@ import Actions from '../../actions/projects';
 class Article extends React.Component {
 
     render() {
-        const {setProjectBackground} = this.props;
 
         return (
-                <li className="preview preview__blog" onMouseOver={() => this.props.setArticleBackground('article' + (this.props.i+1))}>
-                    <Link className="preview__link" to={this.props.articleLink}>
+                <li className="preview preview__blog">
+                    <Link className="preview__link" to={"blog/" + (this.props.i + 1)}>
                         <span className="preview__date" >{this.props.date}</span>
                         <h2 className="preview__header">{this.props.title}</h2>
                         <p className="preview__excerpt preview__excerpt__blog">{this.props.excerpt}</p>
@@ -22,12 +21,6 @@ class Article extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        ArticleBackground: state.ArticleBackground,
-    }
-};
-
 const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default connect(mapStateToProps, mapDispatchToProps)(Article);
+export default connect(undefined, mapDispatchToProps)(Article);
