@@ -23,6 +23,10 @@ class Article extends React.Component {
                 nextArticle = article;
                 console.log(nextArticle);
                 console.log(nextArticle.title);
+            } else if (nextArticle == {}) {
+                nextArticle = articles[0];
+                console.log(nextArticle);
+                console.log(nextArticle.title);
             }
         })
     }
