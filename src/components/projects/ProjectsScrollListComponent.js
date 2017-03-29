@@ -19,7 +19,7 @@ class ProjectsScrollListComponent extends Component {
         (mode, scrollName) => {
             console.log(mode);
             console.log(this.state.prevMode);
-            console.log(id);
+            // console.log(id);
             console.log(this.props.setProjectBackground);
             if (this.state.prevMode === 'leave' && mode.mode == 'enter') {
                 this.props.setProjectBackground(mode.id);
