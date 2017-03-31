@@ -78,10 +78,20 @@ li.preview__blog {
 }
 
 .title__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  color: #fff;
+  @media (min-width: $mq-md) {
+    width: 45%;
+  }
   position: absolute;
-  width: 45%!important;
+  width: 100%;
   padding-top: 215px!important;
   height: auto!important;
+
 }
 
 .site__title {
@@ -151,10 +161,16 @@ li.preview__blog {
 }
 
 p.preview__excerpt__blog {
-  height: 20vh;
+  height: 17vh;
   min-height: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
+  @media (min-width: $mq-sm) {
+    height: 18vh;
+  }
+  @media (min-width: $mq-xl) {
+    height: 20vh;
+  }
 }
 
 .leftSide__img__projects {
@@ -166,8 +182,11 @@ p.preview__excerpt__blog {
 }
 
 .leftSide__img__blog {
-  height: 46vh;
-  min-height: 368px;
+  display: inline-block;
+  width: 45%;
+  height: 100%;
+  padding-left: 4em;
+  float: left;
 }
 
 .project__title {
@@ -230,11 +249,15 @@ p.preview__excerpt__blog {
   }
 
   &__link {
-    display: block;
-    padding: 2em 1em;
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 55%;
+    clear: both;
 
     @media (min-width: $mq-md) {
-      padding: 2em 2em;
+      padding-left: 2em;
+      padding-right: 2em;
     }
 
     @media (min-width: $mq-xxl) {

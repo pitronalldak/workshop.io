@@ -8,7 +8,6 @@ export default class Project extends React.Component {
             <li className="preview">
                 <h2 className="project__title">{this.props.title}</h2>
                 <span className="preview__date">{this.props.date}</span>
-                <br/><br/>
                 <h3 className="preview__header">Project description</h3>
                 <p className="preview__excerpt">{this.props.description}</p>
                 <h3 className="preview__header">Development</h3>
@@ -19,7 +18,6 @@ export default class Project extends React.Component {
                         })}
                     </ul>
                 </div>
-                <h3 className="preview__header">Implemented technologies</h3>
                 {this.props.technologies.map(function(tech, i) {
                     return <figure key={i} className={"project__technology " + tech} />
                 })}
