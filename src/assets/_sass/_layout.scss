@@ -58,6 +58,7 @@ section {
 
         height: 100%;
         width: 45%;
+        animation: fade-in 1s both;
       }
 
       &:after {
@@ -66,8 +67,6 @@ section {
     }
 
     &:last-child {
-      min-height: 100vh;
-      padding-top: 4em;
       @media (min-width: $mq-md) {
         margin-left: 45%;
       }

@@ -28,7 +28,6 @@ class ProjectsScrollListComponent extends Component {
         };
 
     render () {
-
         return (
             <div >
                 {projects.map((project, key) =>
@@ -36,22 +35,15 @@ class ProjectsScrollListComponent extends Component {
                         id={'page'+project.id}
                         key={project.id}
                     >
-                        <ScrollOverPack
-                            onChange={this.onChange(project.id)}
-                            id={project.id}
-                            playScale={1}
-                            location={'page'+project.id}  //finish scroll of last element
-                        >
-                            <ProjectComponent
-                                key={project.id}
-                                title={project.title}
-                                date={project.date}
-                                description={project.description}
-                                development={project.development}
-                                technologies={project.technologies}
-                                link={project.link}
-                            />
-                        </ScrollOverPack>
+                        <ProjectComponent
+                            key={project.id}
+                            title={project.title}
+                            date={project.date}
+                            description={project.description}
+                            development={project.development}
+                            technologies={project.technologies}
+                            link={project.link}
+                        />
                     </div>
                 )}
             </div>

@@ -54,10 +54,6 @@
   }
 }
 
-li.preview {
-  padding: 2em 2em;
-  height: 100vh;
-}
 
 li.preview__blog {
   padding: 2em 2em;
@@ -102,7 +98,7 @@ li.preview__blog {
 
 .nav__wrapper {
   height: 8vh;
-  min-height: 8em;
+  min-height: 3.5em;
   position: fixed;
   width: 55%;
   background-color: $color-grey;
@@ -210,7 +206,8 @@ p.preview__excerpt__blog {
 
 .preview {
   transition: background-color 0.2s ease-in-out;
-  
+  list-style-type: none;
+
   &:nth-child(even) {
     background-color: $color-white;
   }
@@ -234,7 +231,7 @@ p.preview__excerpt__blog {
     padding: 2em 1em;
 
     @media (min-width: $mq-md) {
-      padding: 2em 2em;
+      padding: 4em 8em;
     }
 
     @media (min-width: $mq-xxl) {
@@ -382,13 +379,11 @@ p.preview__excerpt__blog {
  * Footer
  */
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   padding-left: 2em;
   padding-right: 2em;
-  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 
   @media (min-width: $mq-sm) {
     flex-direction: row;

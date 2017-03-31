@@ -12,12 +12,12 @@ class ProjectsPage extends Component {
     render() {
 
         const {visibleProjectId} = this.props;
-        console.log(visibleProjectId)
+        const project = projects.find(p => p.id == visibleProjectId) || projects[0];
+        console.log(visibleProjectId, 'sds')
         return (
             <div className="previews">
                 <div className="image__scroll">
-                    <div className="place__forHeader"></div>
-                    {/*<img className="leftSide__img__projects" src={projects.find(p => p.id == visibleProjectId)}/>*/}
+                    <img className="leftSide__img__projects" src={`src/assets/img/${project.imgPath}`}/>
                 </div>
                 <ProjectsScrollListComponent />
             </div>
