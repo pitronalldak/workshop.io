@@ -67,7 +67,7 @@ section {
 
     &:last-child {
       min-height: 100vh;
-
+      padding-top: 4em;
       @media (min-width: $mq-md) {
         margin-left: 45%;
       }

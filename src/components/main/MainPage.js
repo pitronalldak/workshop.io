@@ -13,7 +13,6 @@ class MainPage extends Component {
                     <span>Best solution for your ideas</span>
                 </div>
                 <div>
-                    <div className="place__forHeader"></div>
                     <figure className="relative-bg tools__img"></figure>
                     <FooterComponent />
                 </div>
