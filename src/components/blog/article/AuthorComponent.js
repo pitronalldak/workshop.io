@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
-export class Author extends React.Component {
+export default class AuthorComponent extends React.Component {
 
     render() {
         const figureBackground = {

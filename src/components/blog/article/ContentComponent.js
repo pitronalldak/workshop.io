@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
-export class Content extends React.Component {
+export default class Content extends React.Component {
 
     render() {
 

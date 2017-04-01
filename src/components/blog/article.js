@@ -14,7 +14,7 @@ class Article extends React.Component {
                     className="leftSide__img__blog"
                     src={'src/assets/img/article' + this.props.id + '.png'}>
                 </img>
-                <Link className="preview__link" to={"blog/" + (this.props.id + 1)}>
+                <Link className="preview__link" to={'/blog/' + (this.props.id + 1)}>
                     <span className="preview__date" >{this.props.date}</span>
                     <h2 className="preview__header">{this.props.title}</h2>
                     <p className="preview__excerpt preview__excerpt__blog">{this.props.excerpt}</p>
