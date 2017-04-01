@@ -14,7 +14,6 @@ class ProjectsPage extends Component {
 
         const {visibleProjectId} = this.props;
         const project = projects.find(p => p.id == visibleProjectId) || projects[0];
-        console.log(visibleProjectId, 'sds')
         return (
             <div className="previews">
                 <ProjectTransitionComponent imgPath={project.imgPath} />
