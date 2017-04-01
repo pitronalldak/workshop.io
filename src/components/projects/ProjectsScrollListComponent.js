@@ -9,7 +9,6 @@ import ProjectComponent from './ProjectComponent';
 
 const projects = (require('../../assets/json/projects.json'));
 const ScrollOverPack = ScrollAnim.OverPack;
-ScrollAnim.scrollScreen.init({ loop: false, scrollInterval: 300, duration: 500 });
 
 
 class ProjectsScrollListComponent extends Component {
@@ -17,15 +16,23 @@ class ProjectsScrollListComponent extends Component {
 
     onChange = (id) =>
         (mode, scrollName) => {
-            console.log(mode);
-            console.log(this.state.prevMode);
-            // console.log(id);
-            console.log(this.props.setProjectBackground);
             if (this.state.prevMode === 'leave' && mode.mode == 'enter') {
                 this.props.setProjectBackground(mode.id);
+                console.log(mode);
+                console.log(this.state.prevMode);
+                // console.log(id);
             }
             this.setState({prevMode: mode.mode});
         };
+
+    componentDidMount() {
+        ScrollAnim.scrollScreen.init({ loop: false, scrollInterval: 300, duration: 500 });
+    }
+
+    componentWillUnmount() {
+        ScrollAnim.scrollScreen.unMount();
+        window.scrollTo(0,0);
+    }
 
     render () {
 

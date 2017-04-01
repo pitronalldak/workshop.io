@@ -10,11 +10,20 @@ class Articles extends React.Component {
 
     render() {
             return (
-                <ul>
-                    {articles.map(function(article, i) {
-                        return <Article key={i} i={i} title={article.title} date={article.date} excerpt={article.excerpt} articleLink={article.articleLink}/>;
-                    })}
-                </ul>
+                <div className="tab active no-margin-left">
+                    <ul>
+                        {articles.map(function(article, i) {
+                            return <Article
+                                    key={i}
+                                    id={article.id}
+                                    title={article.title}
+                                    date={article.date}
+                                    excerpt={article.excerpt}
+                                    articleLink={article.articleLink}
+                                />
+                        })}
+                    </ul>
+                </div>
             );
     }
 }

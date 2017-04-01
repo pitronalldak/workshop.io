@@ -24,9 +24,16 @@
   background-repeat: no-repeat;
 }
 
+.no-margin-left {
+  margin-left: 0!important;
+}
+
 .image__scroll {
   overflow: hidden;
   background-color: $color-alpha--light!important;
+  @media (max-width: $mq-md) {
+    display: none;
+  }
 }
 
 .image__scroll:after {

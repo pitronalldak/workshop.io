@@ -7,7 +7,7 @@ class MainPage extends Component {
         return (
             <div className="previews">
                 <figure className="absolute-bg preview__img"></figure>
-                <div className="previews__container title__container">
+                <div className="title__container">
                     <span>Welcome to</span>
                     <h1>WorkShop</h1>
                     <span>Best solution for your ideas</span>

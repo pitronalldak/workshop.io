@@ -147,10 +147,16 @@ li.preview__blog {
 }
 
 p.preview__excerpt__blog {
-  height: 20vh;
+  height: 17vh;
   min-height: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
+  @media (min-width: $mq-sm) {
+    height: 18vh;
+  }
+  @media (min-width: $mq-xl) {
+    height: 20vh;
+  }
 }
 
 .leftSide__img__projects {
@@ -162,8 +168,11 @@ p.preview__excerpt__blog {
 }
 
 .leftSide__img__blog {
-  height: 46vh;
-  min-height: 368px;
+  display: inline-block;
+  width: 45%;
+  height: 100%;
+  padding-left: 4em;
+  float: left;
 }
 
 .project__title {
