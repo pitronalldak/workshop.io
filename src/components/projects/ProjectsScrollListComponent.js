@@ -28,21 +28,19 @@ class ProjectsScrollListComponent extends Component {
         };
 
     render () {
+
+        const {visibleProjectId, setProjectBackground} = this.props;
         return (
             <div >
-                {projects.map((project, key) =>
+                {projects.map(project =>
                     <div
                         id={'page'+project.id}
                         key={project.id}
                     >
                         <ProjectComponent
-                            key={project.id}
-                            title={project.title}
-                            date={project.date}
-                            description={project.description}
-                            development={project.development}
-                            technologies={project.technologies}
-                            link={project.link}
+                            project={project}
+                            setProjectBackground={setProjectBackground}
+                            visibleProjectId={visibleProjectId}
                         />
                     </div>
                 )}
@@ -55,6 +53,12 @@ ProjectsScrollListComponent.PropTypes = {
     setProjectBackground: PropTypes.func.isRequired
 };
 
+const mapStateToProps = (state) => {
+    return {
+        visibleProjectId: state.projects.visibleProjectId,
+    }
+};
+
 const mapDispatchToProps = (dispatch) => bindActionCreators(new ProjectsActions, dispatch);
 
-export default connect(undefined, mapDispatchToProps)(ProjectsScrollListComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectsScrollListComponent);

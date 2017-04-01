@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import ProjectsScrollListComponent from './ProjectsScrollListComponent';
 import ProjectsActions from '../../actions/projects';
+import ProjectTransitionComponent from './ProjectTransitionComponent';
 
 const projects = (require('../../assets/json/projects.json'));
 
@@ -16,9 +17,7 @@ class ProjectsPage extends Component {
         console.log(visibleProjectId, 'sds')
         return (
             <div className="previews">
-                <div className="image__scroll">
-                    <img className="leftSide__img__projects" src={`src/assets/img/${project.imgPath}`}/>
-                </div>
+                <ProjectTransitionComponent imgPath={project.imgPath} />
                 <ProjectsScrollListComponent />
             </div>
         );
