@@ -32,9 +32,8 @@ export default (
             <IndexRoute component={MainPage}/>
             <Route path={urls.projects.path} component={Projects} />
                 /*<Route path={urls.contributions.path} component={Contributions} />*/
-            <Route path={urls.blog.path} component={Blog} >
-                <Route path={urls.article.path} component={ArticlePage}/>
-            </Route>
+            <Route path={urls.blog.path} component={Blog} />
+            <Route path={urls.article.path} component={ArticlePage}/>
         </Route>
         <Route path="*" component={NotFoundComponent} />r
     </Route>

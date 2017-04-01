@@ -10,18 +10,19 @@ import ContentComponent from './ContentComponent';
 
 let articles = require('../../../assets/json/articles.json');
 
-class ArticlePage extends React.Component {
+class ArticlePage extends Component {
 
     componentDidUpdate() {
         window.scrollTo(0,0);
     }
 
     render() {
+
+        const article  = articles.find(a => a.id == this.props.params.id);
+        const nextArticle = articles[articles.indexOf(articles.find(a => a.id == this.props.params.id)) + 1];
         const aBackground = {
             backgroundImage: 'url(../src/assets/img/article' + article.id + '.png)'
         };
-        const article  = articles.find(a => a.id == this.props.params.id);
-        const nextArticle = articles[articles.indexOf(articles.find(a => a.id == this.props.params.id)) + 1];
         return (
             <div>
                 <div className="place__forHeader"></div>
@@ -32,14 +33,14 @@ class ArticlePage extends React.Component {
                         date={article.date}
                     />
                     <ContentComponent text={article.text} />
-                    <AuthorComponent.js link={article.link}/>
+                    <AuthorComponent link={article.link}/>
                 </article>
                 {nextArticle ?
                     <section className="next">
-                        <Link className="next__link" to={"/blog/" + article.id} style={aBackground}>
+                        <Link className="next__link" to={"/blog/" + nextArticle.id} style={aBackground}>
                             <div className="next__container">
                                 <span>Read Next</span>
-                                <h2>{article.title}</h2>
+                                <h2>{nextArticle.title}</h2>
                             </div>
                         </Link>
                     </section> : null
@@ -54,12 +55,6 @@ ArticlePage.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state) => {
-    return {
-        ArticleBackground: state.ArticleBackground,
-    }
-};
-
 const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticlePage);
+export default connect(null, mapDispatchToProps)(ArticlePage);

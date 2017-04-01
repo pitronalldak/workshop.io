@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 
-export default class Header extends React.Component {
+export default class HeaderComponent extends Component {
 
     render() {
         let figureStyle = {
