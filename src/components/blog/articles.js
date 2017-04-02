@@ -20,7 +20,7 @@ class Articles extends React.Component {
                                     date={article.date}
                                     excerpt={article.excerpt}
                                     articleLink={article.articleLink}
-                                />
+                            />
                         })}
                     </ul>
                 </div>

@@ -10,11 +10,13 @@ class Article extends React.Component {
 
         return (
             <li className="preview preview__blog">
+                <div className="leftSide__img__blog">
                 <img
-                    className="leftSide__img__blog"
+                    className="img__blog"
                     src={'src/assets/img/article' + this.props.id + '.png'}>
                 </img>
-                <Link className="preview__link" to={'/blog/' + (this.props.id + 1)}>
+                </div>
+                <Link className="preview__link preview__link_blog" to={'/blog/' + (this.props.id)}>
                     <span className="preview__date" >{this.props.date}</span>
                     <h2 className="preview__header">{this.props.title}</h2>
                     <p className="preview__excerpt preview__excerpt__blog">{this.props.excerpt}</p>

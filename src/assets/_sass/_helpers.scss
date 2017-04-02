@@ -18,10 +18,18 @@
 }
 
 .relative-bg {
-  height: 24em;
+  height: 20em;
   margin: 3em 6em;
   background-size: contain;
   background-repeat: no-repeat;
+  @media (max-width: $mq-xl) {
+    height: 18em;
+    margin: 1em 3em;
+  }
+  @media (max-width: $mq-sm) {
+    height: 18em;
+    margin: 1em 0;
+  }
 }
 
 .no-margin-left {

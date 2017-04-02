@@ -1,5 +1,7 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component, PropTypes, findDOMNode} from 'react';
+import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+let i;
 
 export default class ProjectTransitionComponent extends React.Component {
 
@@ -10,10 +12,12 @@ export default class ProjectTransitionComponent extends React.Component {
         return (
             <div className="image__scroll">
                 <ReactCSSTransitionGroup
+                    key={imgPath}
                     transitionName="visible__project"
-                    transitionEnterTimeout={3e3}
-                    transitionLeaveTimeout={3e3}
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={500}
                     transitionAppear={true}
+                    transitionAppearTimeout={500}
                 >
                     <img className="leftSide__img__projects" src={`src/assets/img/${imgPath}`}/>
                 </ReactCSSTransitionGroup>

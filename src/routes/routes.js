@@ -13,16 +13,16 @@ export const urls = {
         path: '/'
     },
     projects: {
-        path: 'projects'
+        path: '/projects'
     },
     contributions: {
-        path: 'contributions'
+        path: '/contributions'
     },
     blog: {
-        path: 'blog'
+        path: '/blog'
     },
     article: {
-        path: 'blog/:id'
+        path: '/blog/:id'
     }
 };
 

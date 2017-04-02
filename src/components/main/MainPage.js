@@ -13,6 +13,10 @@ class MainPage extends Component {
                     <span>Best solution for your ideas</span>
                 </div>
                 <div>
+                    <div>
+                        <p className="main-text">We are team of web developers, passionate about our job.</p>
+                        <p className="main-text">We create web, mobile and desktop applications based on stack of technologies you can find below.</p>
+                    </div>
                     <figure className="relative-bg tools__img"></figure>
                     <FooterComponent />
                 </div>

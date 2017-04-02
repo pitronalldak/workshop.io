@@ -7,12 +7,17 @@ import Actions from '../../../actions/projects';
 import AuthorComponent from './AuthorComponent';
 import HeaderComponent from './HeaderComponent';
 import ContentComponent from './ContentComponent';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 let articles = require('../../../assets/json/articles.json');
 
 class ArticlePage extends Component {
 
     componentDidUpdate() {
+        window.scrollTo(0,0);
+    }
+
+    componentDidMount() {
         window.scrollTo(0,0);
     }
 
@@ -25,16 +30,29 @@ class ArticlePage extends Component {
         };
         return (
             <div>
-                <div className="place__forHeader"></div>
-                <article>
-                    <HeaderComponent
-                        id={article.id}
-                        title={article.title}
-                        date={article.date}
-                    />
-                    <ContentComponent text={article.text} />
-                    <AuthorComponent link={article.link}/>
-                </article>
+                <ReactCSSTransitionGroup
+                    key={article.id}
+                    transitionName="visible__project"
+                    transitionEnterTimeout={10e3}
+                    transitionLeaveTimeout={10e3}
+                    transitionAppear={true}
+                    transitionAppearTimeout={500}
+                >
+                    <div className="place__forHeader"></div>
+                    <article>
+                        <HeaderComponent
+                            id={article.id}
+                            title={article.title}
+                            date={article.date}
+                        />
+                        <ContentComponent
+                            text={article.text}
+                        />
+                        <AuthorComponent
+                            link={article.link}
+                        />
+                    </article>
+                </ReactCSSTransitionGroup>
                 {nextArticle ?
                     <section className="next">
                         <Link className="next__link" to={"/blog/" + nextArticle.id} style={aBackground}>
