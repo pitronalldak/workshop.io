@@ -1,7 +1,7 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router';
 
-export default class Project extends React.Component {
+export default class Project extends Component {
 
     onMouseOver = () => {
         if (this.props.visibleProjectId !== this.props.project.id) {

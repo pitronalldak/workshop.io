@@ -9,13 +9,16 @@ class MainPage extends Component {
                 <figure className="absolute-bg preview__img"></figure>
                 <div className="title__container">
                     <span>Welcome to</span>
-                    <h1>WorkShop</h1>
+                    <h1>Web factory</h1>
                     <span>Best solution for your ideas</span>
                 </div>
                 <div>
-                    <div>
+                    <div className="description">
                         <p className="main-text">We are team of web developers, passionate about our job.</p>
-                        <p className="main-text">We create web, mobile and desktop applications based on stack of technologies you can find below.</p>
+                        <p className="main-text">
+                            We create unique web, mobile and desktop applications
+                            based on modern technologies.
+                        </p>
                     </div>
                     <figure className="relative-bg tools__img"></figure>
                     <FooterComponent />
@@ -28,8 +31,5 @@ class MainPage extends Component {
 MainPage.PropTypes = {
     children: PropTypes.element.isRequired
 };
-
-// const mapStateToProps = (state) => ({showUploadPanel: state.showUploadPanel});
-// const mapDispatchToProps = (dispatch) => (bindActionCreators(new ProjectsActions,dispatch));
 
 export default MainPage;

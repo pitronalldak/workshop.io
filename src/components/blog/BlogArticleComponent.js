@@ -1,10 +1,11 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import Actions from '../../actions/projects';
 
-class Article extends React.Component {
+class BlogArticleComponent extends Component {
 
     render() {
 
@@ -20,7 +21,6 @@ class Article extends React.Component {
                     <span className="preview__date" >{this.props.date}</span>
                     <h2 className="preview__header">{this.props.title}</h2>
                     <p className="preview__excerpt preview__excerpt__blog">{this.props.excerpt}</p>
-                    <span className="preview__more">Read More</span>
                 </Link>
             </li>
         );
@@ -29,4 +29,4 @@ class Article extends React.Component {
 
 const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default connect(undefined, mapDispatchToProps)(Article);
+export default connect(undefined, mapDispatchToProps)(BlogArticleComponent);

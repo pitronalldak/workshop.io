@@ -2,37 +2,13 @@ import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ScrollAnim from 'rc-scroll-anim';
-const Element = ScrollAnim.Element;
 
 import ProjectsActions from '../../actions/projects';
 import ProjectComponent from './ProjectComponent';
 
 const projects = (require('../../assets/json/projects.json'));
-const ScrollOverPack = ScrollAnim.OverPack;
-
 
 class ProjectsScrollListComponent extends Component {
-    state = {prevMode: 'leave'};
-
-    onChange = (id) =>
-        (mode, scrollName) => {
-            if (this.state.prevMode === 'leave' && mode.mode == 'enter') {
-                this.props.setProjectBackground(mode.id);
-                console.log(mode);
-                console.log(this.state.prevMode);
-                // console.log(id);
-            }
-            this.setState({prevMode: mode.mode});
-        };
-
-    componentDidMount() {
-        ScrollAnim.scrollScreen.init({ loop: false, scrollInterval: 300, duration: 500 });
-    }
-
-    componentWillUnmount() {
-        ScrollAnim.scrollScreen.unMount();
-        window.scrollTo(0,0);
-    }
 
     render () {
 

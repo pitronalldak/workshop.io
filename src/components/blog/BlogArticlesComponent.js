@@ -1,19 +1,19 @@
-import React, {Component, PropTypes} from 'react';
-import {Link} from 'react-router';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import Actions from '../../actions/projects';
-import Article from './article';
+import BlogArticleComponent from './BlogArticleComponent';
 let articles = require('../../assets/json/articles.json');
 
-class Articles extends React.Component {
+class BlogArticlesComponent extends Component {
 
     render() {
             return (
                 <div className="tab active no-margin-left">
                     <ul>
-                        {articles.map(function(article, i) {
-                            return <Article
+                        {articles.map((article, i) =>
+                             <BlogArticleComponent
                                     key={i}
                                     id={article.id}
                                     title={article.title}
@@ -21,19 +21,13 @@ class Articles extends React.Component {
                                     excerpt={article.excerpt}
                                     articleLink={article.articleLink}
                             />
-                        })}
+                        )}
                     </ul>
                 </div>
             );
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        ProjectBackground: state.ProjectBackground,
-    }
-};
-
 const mapDispatchToProps = (dispatch) => (bindActionCreators(new Actions,dispatch));
 
-export default connect(mapStateToProps, mapDispatchToProps)(Articles);
+export default connect(null, mapDispatchToProps)(BlogArticlesComponent);

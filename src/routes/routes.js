@@ -4,7 +4,7 @@ import BaseComponent from '../components/BaseComponent';
 import MainPage from '../components/main/MainPage';
 import Projects from '../components/projects/ProjectsPage';
 import Contributions from '../components/contributions/ContributionsPage';
-import Blog from '../components/blog/blogPage';
+import Blog from '../components/blog/BlogPage';
 import NotFoundComponent from '../components/common/NotFoundPage';
 import ArticlePage from '../components/blog/article/ArticlePage';
 

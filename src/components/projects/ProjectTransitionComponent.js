@@ -1,7 +1,5 @@
 import React, {Component, PropTypes, findDOMNode} from 'react';
-import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-let i;
 
 export default class ProjectTransitionComponent extends React.Component {
 
