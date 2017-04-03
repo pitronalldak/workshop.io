@@ -5,7 +5,7 @@ $font-header: 'Space Mono', monospace;
 $font-body: 'Inconsolata', monospace;
 $font-post: 'Lora', serif;
 
-$color-alpha: #9f8f68;
+$color-alpha: #955b50;
 $color-alpha--light: #f5f3ef;
 
 $color-black: #0a0a0a;
@@ -61,7 +61,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 
-  font-family: $font-header;
+  font-family: $font-header !important;
   line-height: 1.1;
 }
 
@@ -79,7 +79,6 @@ h1 {
 
 h2 {
   margin-bottom: 0.25em;
-
   font-size: 1.75em;
 
   @media (min-width: $mq-md) {

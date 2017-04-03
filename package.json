@@ -32,15 +32,20 @@
     "eslint-plugin-react": "^6.2.0",
     "fast-async": "^6.0.32",
     "file-loader": "^0.10.1",
+    "font-awesome": "^4.7.0",
+    "fullpage-react": "^2.0.3",
     "html-webpack-plugin": "^2.22.0",
     "node-sass": "^4.5.0",
     "pipe-error-stop": "0.0.9",
+    "rc-scroll-anim": "^1.0.3",
     "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
     "react-bootstrap": "^0.30.3",
     "react-dom": "^15.3.1",
     "react-hot-loader": "^3.0.0-beta.3",
     "react-redux": "^4.4.5",
     "react-router": "^3.0.2",
+    "react-scroll": "^1.4.7",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "sass-loader": "^6.0.3",
@@ -55,6 +60,7 @@
     "yargs": "^3.32.0"
   },
   "devDependencies": {
-    "file-loader": "^0.10.1"
+    "file-loader": "^0.10.1",
+    "json-loader": "^0.5.4"
   }
 }

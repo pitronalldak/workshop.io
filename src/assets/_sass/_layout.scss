@@ -33,7 +33,7 @@ section {
 }
 
 /**
- * Blog page
+ * BlogPage page
  */
 .previews {
 
@@ -58,6 +58,7 @@ section {
 
         height: 100%;
         width: 45%;
+        animation: fade-in 1s both;
       }
 
       &:after {
@@ -66,11 +67,19 @@ section {
     }
 
     &:last-child {
-      min-height: 100vh;
-
       @media (min-width: $mq-md) {
         margin-left: 45%;
       }
     }
   }
+
+  .description {
+    padding: 0 6em;
+  }
+}
+
+.blog__left__pics {
+  position: relative!important;
+  width: 45%!important;
+  float: left;
 }

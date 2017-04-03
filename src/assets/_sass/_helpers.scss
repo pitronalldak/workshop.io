@@ -18,12 +18,34 @@
 }
 
 .relative-bg {
-  height: 500px;
-  width: 100%;
-  margin-top: 20px;
+  height: 20em;
+  margin: 1em 6em;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  @media (max-width: $mq-xl) {
+    height: 18em;
+    margin: 1em 3em;
+  }
+  @media (max-width: $mq-sm) {
+    height: 18em;
+    margin: 1em 0;
+  }
+}
+
+.no-margin-left {
+  margin-left: 0!important;
+}
+
+.image__scroll {
+  overflow: hidden;
+  background-color: $color-alpha--light!important;
+  @media (max-width: $mq-md) {
+    display: none;
+  }
+}
+
+.image__scroll:after {
+  background-color: transparent!important;
 }
 
 /**

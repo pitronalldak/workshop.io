@@ -21,6 +21,10 @@
     padding-right: 5em;
   }
 
+  .tabs__item {
+    margin: 0.4em 1em;
+  }
+
   ul {
     list-style-type: none;
   }
@@ -50,9 +54,82 @@
   }
 }
 
+
+li.preview__blog {
+  padding: 4em 2em;
+}
+
+.place__forHeader {
+  position: relative!important;
+  height: 0!important;
+  width: 100%!important;
+  background-color: $color-grey!important;
+}
+
+.place__forHeader:after {
+  background-color: $color-grey!important;
+}
+
+.title__container {
+  text-align: center;
+  position: absolute;
+  width: 100%!important;
+  padding-top: 80px!important;
+  height: auto!important;
+  color: #f8f9f9;
+  @media (min-width: $mq-md) {
+    width: 45%!important;
+    padding-top: 215px!important;
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+}
+
+.main-text {
+  margin: 1em 1em;
+}
+
+.site__title {
+  z-index: 2;
+  height: 8%;
+  min-height: 64px;
+  width: 45%;
+  background-color: $color-grey;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  position: fixed;
+}
+
+.site__title h1 {
+  margin: 0 auto;
+}
+
+.nav__wrapper {
+  height: 8%;
+  min-height: 3.5em;
+  position: fixed;
+  width: 55%;
+  background-color: $color-grey;
+  z-index: 2;
+  @media (min-width: $mq-md) {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+}
+
+.nav__buttons {
+  margin-left: 0;
+  @media (min-width: $mq-sm) {
+    margin-left: 45%;
+  }
+}
+
 /**
- * Blog Post Preview
- * On the Blog page
+ * BlogPage Post Preview
+ * On the BlogPage page
  */
 .previews {
 
@@ -75,17 +152,119 @@
   }
 }
 
-.preview__img {
-  background-image: url('../../assets/img/bgleftmain.jpg');
-}
-
 .tools__img {
   background-image: url('../../assets/img/toolsimg.png');
+  animation: fade-in 1s both;
+}
+
+.visible__project-enter {
+  opacity: 0.01;
+}
+
+.visible__project-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.visible__project-leave {
+  opacity: 1;
+}
+
+.visible__project-leave.visible__project-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+.visible__project-appear {
+  opacity: 0.01;
+}
+
+.visible__project-appear.visible__project-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.preview__img {
+  background-image: url('../../assets/img/bgleftmain.jpg');
+  height: 15em!important;
+  @media (min-width: $mq-md) {
+    height: 100%!important;
+  }
+}
+
+p.preview__excerpt__blog {
+  height: 8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leftSide__img__projects {
+  position: relative;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: auto;
+}
+
+.leftSide__img__blog {
+  display: none;
+  width: 45%;
+  padding-left: 4em;
+  float: left;
+  height: 13em;
+  @media (min-width: $mq-md) {
+    display: inline-block;
+  }
+}
+
+.img__blog {
+  width: 20em;
+  height: inherit;
+  float: right;
+}
+
+.project__title {
+  margin-top: 13.2px;
+}
+
+.project__dev__list {
+  margin-bottom: 10px;
+}
+
+.project__technology {
+  background-image: url('../../assets/img/toolsimgsmall.png');
+  width: 133.37px;
+  height: 59.54px;
+  display: inline-block;
+}
+
+.project__technology__typescript {
+  background-image: url('../../assets/img/toolsimgsmall.png');
+  width: 133.37px;
+  height: 59.54px;
+  background-position: 0 -59.54px;
+}
+
+.project__technology__node {
+  background-image: url('../../assets/img/toolsimgsmall.png');
+  width: 133.37px;
+  height: 59.54px;
+  background-position: 0 -119.08px;
+}
+
+.project__link {
+  @include border-slide();
+  cursor: pointer;
+}
+
+.project__link__title {
+  margin-top: 15px;
 }
 
 .preview {
   transition: background-color 0.2s ease-in-out;
-  
+  list-style-type: none;
+
   &:nth-child(even) {
     background-color: $color-white;
   }
@@ -135,6 +314,24 @@
 
   &__more {
     @include button-slide();
+  }
+}
+
+.preview__link_blog {
+  display: inline-block;
+  width: 100%;
+  padding-left: 2em;
+  padding-right: 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+  @media (min-width: $mq-md) {
+    padding-left: 4em;
+    padding-right: 8em;
+    width: 55%;
+  }
+  @media (min-width: $mq-xxl) {
+    padding-left: 8em;
+    padding-right: 10em;
   }
 }
 
@@ -227,7 +424,7 @@
 
 /**
  * Pagination
- * On the Blog page when enough posts to paginate
+ * On the BlogPage page when enough posts to paginate
  */
 .pagination {
   @extend %letter-spacing;
@@ -257,13 +454,11 @@
  * Footer
  */
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   padding-left: 2em;
   padding-right: 2em;
-  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 
   @media (min-width: $mq-sm) {
     flex-direction: row;
