@@ -6,7 +6,7 @@ class MainPage extends Component {
     render() {
         return (
             <div className="previews">
-                <figure className="absolute-bg preview__img"></figure>
+                <figure className="absolute-bg preview__img" alt="sampleCode"></figure>
                 <div className="title__container">
                     <span>Welcome to</span>
                     <h1>Web factory</h1>
@@ -20,7 +20,7 @@ class MainPage extends Component {
                             based on modern technologies.
                         </p>
                     </div>
-                    <figure className="relative-bg tools__img"></figure>
+                    <figure className="relative-bg tools__img" alt="web technologies"></figure>
                     <FooterComponent />
                 </div>
             </div>

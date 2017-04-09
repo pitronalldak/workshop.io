@@ -14,11 +14,26 @@ export default class AuthorComponent extends React.Component {
                     </div>
                     <div className="profile__container">
                         <p>This article was inspired by Martin Moore. More information you can find here:
-                            <a href={this.props.link.linkItself}>{this.props.link.linkTitle}</a>
+                            <a href={this.props.link.linkItself} title="For more information">{this.props.link.linkTitle}</a>
                         </p>
                         <ul className="profile__social">
-                            <li><a className="fa fa-lg fa-envelope-o" href="mailto:pavlovandrew@mail.ru"></a></li>
-                            <li><a className="fa fa-lg fa-facebook" href="https://www.facebook.com/andrew.pavlov.980" target="_blanc"></a></li>
+                            <li>
+                                <a
+                                    className="fa fa-lg fa-envelope-o"
+                                    href="mailto:pavlovandrew@mail.ru"
+                                    title="mailto:pavlovandrew@mail.ru"
+                                >
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    className="fa fa-lg fa-facebook"
+                                    href="https://www.facebook.com/andrew.pavlov.980"
+                                    target="_blanc"
+                                    title="facebook.com/andrew.pavlov.980"
+                                >
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

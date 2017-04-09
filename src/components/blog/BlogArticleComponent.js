@@ -14,7 +14,8 @@ class BlogArticleComponent extends Component {
                 <div className="leftSide__img__blog">
                 <img
                     className="img__blog"
-                    src={'src/assets/img/article' + this.props.id + '.png'}>
+                    src={'src/assets/img/article' + this.props.id + '.png'}
+                    alt={this.props.title}>
                 </img>
                 </div>
                 <Link className="preview__link preview__link_blog" to={'/blog/' + (this.props.id)}>

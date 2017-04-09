@@ -9,7 +9,7 @@ export default class HeaderComponent extends Component {
         };
         return (
             <header className="section-padding--lg mast rellax">
-                <Link className="nav nav--white" to="/blog">
+                <Link className="nav nav--white" to="/blog" title="Link to the blog">
                     <i className="fa fa-lg fa-arrow-left"></i>
                     <span>Back to all posts</span>
                 </Link>

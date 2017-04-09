@@ -55,7 +55,12 @@ class ArticlePage extends Component {
                 </ReactCSSTransitionGroup>
                 {nextArticle ?
                     <section className="next">
-                        <Link className="next__link" to={"/blog/" + nextArticle.id} style={aBackground}>
+                        <Link
+                            className="next__link"
+                            to={"/blog/" + nextArticle.id}
+                            style={aBackground}
+                            title="Next article in the blog"
+                        >
                             <div className="next__container">
                                 <span>Read Next</span>
                                 <h2>{nextArticle.title}</h2>
