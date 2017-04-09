@@ -42,48 +42,6 @@
 }
 
 /**
- * Flex Grid
- */
-@mixin flex-grid($sm: null, $md: null, $lg: null, $xl: null, $xxl: null, $pad: 0) {
-  display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
-
-  & > * {
-    padding: $pad;
-    flex-basis: 100% / $sm;
-    max-width: 100% / $sm;
-    
-    @media (min-width: $mq-md) {
-      flex-basis: 100% / $md;
-      max-width: 100% / $md;
-    }
-
-    @if $lg {
-      @media (min-width: $mq-lg) {
-        flex-basis: 100%/$lg;
-        max-width: 100%/$lg;
-      }
-    }
-
-    @if $xl {
-      @media (min-width: $mq-xl) {
-        flex-basis: 100% / $xl;
-        max-width: 100% / $xl;
-      }
-    }
-
-    @if $xxl {
-      @media (min-width: $mq-xxl) {
-        flex-basis: 100% / $xxl;
-        max-width: 100% / $xxl;
-      }
-    }
-  }
-}
-
-
-/**
  * Box Shadow
  */
 @mixin box-shadow($size, $color: $color-black) {

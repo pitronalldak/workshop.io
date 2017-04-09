@@ -1,6 +1,3 @@
-/**
- * Absolute Background Cover
- */
 .absolute-bg {
   position: absolute;
   top: 0;
@@ -36,29 +33,6 @@
   margin-left: 0!important;
 }
 
-.image__scroll {
-  overflow: hidden;
-  background-color: $color-alpha--light!important;
-  @media (max-width: $mq-md) {
-    display: none;
-  }
-}
-
-.image__scroll:after {
-  background-color: transparent!important;
-}
-
-/**
- * Color Helpers
- */
-.bg-black {
-  background-color: $color-black;
-}
-
 .bg-grey {
   background-color: $color-grey;
-}
-
-.bg-white {
-  background-color: $color-white;
 }
